@@ -5,6 +5,9 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js" charset="utf-8"></script>
     <title>Tic Tac Toe</title>
@@ -14,24 +17,31 @@
     <a href="index.html"></a>
 
     <div class="scoreBoard">
-        <button class="playerName">Player 1 Score</button>
+        <button class="playerName">Player X</button>
         <input type="text" id="scoreField" placeholder="Score">
-        <button class="playerName">Computer Score</button>
+        <button class="playerName">Player O</button>
         <input type="text" id="scoreField" placeholder="Score">
     </div>
-    
+    <br>
         <div class="gridCon">
-            <div class="gridItem rightBorder bottomBorder">X</div>
-            <div class="gridItem rightBorder bottomBorder">X</div>
-            <div class="gridItem bottomBorder">X</div>
-            <div class="gridItem rightBorder bottomBorder">X</div>
-            <div class="gridItem rightBorder bottomBorder">X</div>
-            <div class="gridItem bottomBorder">X</div>
-            <div class="gridItem rightBorder">X</div>
-            <div class="gridItem rightBorder">X</div>
-            <div class="gridItem ">X</div>
+            <div class="gridItem rightBorder bottomBorder "></div>
+            <div class="gridItem rightBorder bottomBorder "></div>
+            <div class="gridItem bottomBorder "></div>
+            <div class="gridItem rightBorder bottomBorder "></div>
+            <div class="gridItem rightBorder bottomBorder"></div>
+            <div class="gridItem bottomBorder "></div>
+            <div class="gridItem rightBorder "></div>
+            <div class="gridItem rightBorder "></div>
+            <div class="gridItem"></div>
         </div>
-   
-    <a href="index2.html"><button class="play">RESTART GAME</button></a>
+   <br>
+    <div id="gameWin" class = "hidden"> YOU WIN! </div>
+    <div id="gameLost" class = "hidden"> YOU LOSE! </div>
+
+    <a href="index2.html"><button class="restart">Restart Game</button></a>
+
+
+
+    
 </body>
 </html>
