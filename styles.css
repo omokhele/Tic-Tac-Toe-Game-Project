@@ -82,7 +82,9 @@ body{
     background-color: lightgray;
     /* border: 5px; */
     border-radius: 2.5px;
-    /* transition: all 0.3 ease; */  
+    /* transition: all 0.3 ease; */ 
+    border-radius: 5px;
+    color: white    
 }
 
 .restart:hover{
