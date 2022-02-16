@@ -62,20 +62,43 @@ gridItem.addEventListener('click', function (){
 // }
 
 
-let winningCombinations = [
+// Winnings can be detemined vertically, diagonally or horizontally.
+// There are eight winning states
+
+let horWinningCom = [
+    // horizontally 
     [0, 1, 2],
     [3, 4, 5],
     [6, 7, 8],
-    [0, 3, 6],
+];
+
+    // vertically
+let verWinCom = [  [0, 3, 6],
     [1, 4, 7],
     [2, 5, 8],
+];
+    // diagonally
+let diaWinCom = [
     [0, 4, 7],
     [2, 4, 6]
 ];
 
-// for (let i = 0; i < winningCombinations.length; i++) {
-    console.log(winningCombinations); 
 
+// winningCombinations.forEach(function (winningCombination){
+// if (winningCombination === playerX);
+// console.log(check);
+// })
+// }
+function checkWin(playerX){
+    for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+    if (horizontalWin[i][0] === horizontalWin[i][1] && horizontalWin[i][1] === horizontalWin[i][2]) {
+        gameWon === horizontalWin[i][0];
+        alert(gameWon);
+    }
+    }
+}
+}
 // if (playerX = winningCombinations){
 //     console.log("You win");
 // }
