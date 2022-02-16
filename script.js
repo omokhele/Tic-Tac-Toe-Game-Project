@@ -66,26 +66,28 @@ gridItem.addEventListener('click', function (){
 });
 
 const checkWin = () => {
-
-    // const winCombo = [ 
-    //     [0, 1, 2],
-    //     [3, 4, 5],
-    //     [6, 7, 8],
-    //     [0, 3, 6],
-    //     [1, 4, 7],
-    //     [2, 5, 8],
-    //     [0, 4, 8],
-    //     [2, 4, 6],
-    // ];
-    
-    if (playerTurn == gridItem[0] && 
-        gridItem[0] == gridItem[1] && 
-        gridItem[0] == gridItem[2])
-    {
-        console.log("Winner");
+    for(const winningCombo of winningCombos) {
+        console.log(winningCombo)
     }
+}
+    const winningCombos = [ 
+        {combo: [0, 1, 2]},
+        {combo: [3, 4, 5]},
+        {combo: [6, 7, 8]},
+        {combo: [0, 3, 6]},
+        {combo: [1, 4, 7]},
+        {combo: [2, 5, 8]},
+        {combo: [0, 4, 8]},
+        {combo: [2, 4, 6]},
+    ];
     
-} 
+    // if (playerTurn == gridItem[0] && 
+    //     gridItem[0] == gridItem[1] && 
+    //     gridItem[0] == gridItem[2])
+    // {
+    //     console.log("Winner");
+    // }
+    
 });
 
 
