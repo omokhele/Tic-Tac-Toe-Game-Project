@@ -6,45 +6,21 @@ let playerTurn = playerX;
 let gameOver = false;
 
 
+let playerXCounter = 0;
+let playerOCounter = 0;
+// let win;
+
+
 const reset = document.querySelector(".restart")
 const nameField = document.querySelector("#nameField");
 const play = document.querySelector(".play");
 
 let gameWon = document.querySelector("#gameWon");
-let gameLost = document.querySelector("#gameLost");
+// let gameLost = document.querySelector("#gameLost");
 let gridItems = document.querySelectorAll(".gridItem");
 
 // playerTurn === playerX ? playerO : playerX;
 //     return playerTurn;
-
-
-// syntax for creating array from the 3X3 grid
-
-gridItems = Array.from(gridItems)
-// console.log(gridItems);
-
-// make the grid clickable and take input
-
-gridItems.forEach(function (gridItem){
-gridItem.addEventListener('click', function (){
-
-// check if the grid is empty. If not empty make it not clickable 
-
-        if(gridItem.innerHTML != "") {
-            return 0;
-        }
-        else {
-        gridItem.innerHTML = playerTurn; 
-
-// alternate the xs and the os on the board on click
-
-        playerTurn = playerTurn === playerX ? playerO : playerX;
-        return playerTurn;
-        }
-})
-
-});
-
 
 
 // Getting Name Input
@@ -61,71 +37,57 @@ gridItem.addEventListener('click', function (){
 //     console.log("Hello " + userName2);
 // }
 
+// syntax for creating array from the 3X3 grid
 
-// Winnings can be detemined vertically, diagonally or horizontally.
-// There are eight winning states
+gridItems = Array.from(gridItems)
+console.log(gridItems);
 
-let horWin = [
-    // horizontally 
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-];
+// make the grid clickable and take input
 
-    // vertically
-let verWin = [  
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-];
-    // diagonally
-let diaWin = [
-    [0, 4, 7],
-    [2, 4, 6]
-];
+gridItems.forEach(function (gridItem){
+gridItem.addEventListener('click', function (){
 
+// check if the grid is empty. If not empty make it not clickable 
 
-// winningCombinations.forEach(function (winningCombination){
-// if (winningCombination === playerX);
-// console.log(check);
-// })
-// }
-// function checkWin(horWin){
-//     for (let i = 0; i < 3; i++) {
-//         for (let j = 0; j < 3; j++) {
-//             if (horWin[i][0] === horWin[i][1] && horWin[i][1] === horWin[i][2]) {
-//                 gameWon = horWin[i][0];
-//                 alert("gameWon");
-//     }
-//     }
-// }
+        if(gridItem.innerHTML != "") {
+            return 0;
+        }
+        else {
+        gridItem.innerHTML = playerTurn; 
+        checkWin ();
 
-// for (hor of horWin) {
-//     const [a, b, c] = hor;
-//     if (horWin[a] === horWin[b] && horWin[b] === horWin[c])
-//     alert("You win")
-// }
-// }
-// if (playerX = winningCombinations){
-//     console.log("You win");
-// }
+// alternate the xs and the os on the board on click
 
-// const gridItems = Array(gridItem.length).fill(null);
-// console.log(gridItems);
+        playerTurn = playerTurn === playerX ? playerO : playerX;
+        return playerTurn;
+        }
 
-// for (let i = 0; i < gridItems.length; i++) {
-//         let grid = gridItems[i];
-//         console.log(grid); 
+        
+});
 
-//     if(playerTurn === playerX){
-//     gridItems[i].innerHTML = playerX;
-//     }
-//     else {
-//         (playerTurn === playerO) 
-//         gridItems[i].innerHTML = playerO;
-//     }
+const checkWin = () => {
 
-// };
+    // const winCombo = [ 
+    //     [0, 1, 2],
+    //     [3, 4, 5],
+    //     [6, 7, 8],
+    //     [0, 3, 6],
+    //     [1, 4, 7],
+    //     [2, 5, 8],
+    //     [0, 4, 8],
+    //     [2, 4, 6],
+    // ];
+    
+    if (playerTurn == gridItem[0] && 
+        gridItem[0] == gridItem[1] && 
+        gridItem[0] == gridItem[2])
+    {
+        console.log("Winner");
+    }
+    
+} 
+});
+
 
 // Restart Game Function Check
 // reset.removeEventListener('click', function(){
@@ -136,4 +98,6 @@ let diaWin = [
 
 // gridItem.addEventListener('click', () => {
 
-// })
+
+
+
