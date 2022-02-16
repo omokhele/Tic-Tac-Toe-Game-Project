@@ -21,8 +21,10 @@ body{
 }
 
 .gridItem:hover{
-    /* background-color: beige; */
+    background-color: rgb(243, 243, 243);
     cursor: pointer;
+    opacity: 70%;
+    /* z-index:-999; */
 }
 
 .gridItem{
@@ -31,6 +33,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;  
+    font-family: 'Calibri', sans-serif
 }
 
 .rightBorder{
@@ -122,6 +125,12 @@ body{
     border-radius: 2.5px;
     /* transition: all 0.3 ease; */ 
     border-radius: 5px;
-    color: white
-    
+    color: white 
+}
+
+#gameWon{
+    color: red;
+    background-color: black;
+    opacity: 50%;
+
 }

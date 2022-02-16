@@ -3,11 +3,29 @@
 let playerX = "X";
 let playerO = "O";
 
-let playerTurn;
+let playerTurn = playerO;
+
+let gameOver = false;
 
 // Query Selectors
 
-const gridItem = document.querySelectorAll(".gridItem");
+const nextTurn = () => {
+    playerTurn === playerX ? playerO : playerX;
+    return playerTurn;
+}
+
+let gridItems = document.querySelectorAll(".gridItem");
+gridItems = Array.from(gridItems)
+console.log(gridItems);
+
+gridItems.forEach(function (gridItem){
+    gridItem.addEventListener('click', function (){
+    gridItem.innerHTML = playerTurn;
+    })
+});
+
+
+
 const reset = document.querySelector(".restart")
 const nameField = document.querySelector("#nameField");
 const play = document.querySelector(".play");
@@ -18,39 +36,45 @@ let gameLost = document.querySelector("#gameLost");
 
 // Getting Name Input
 
-// document.getElementById("enter1").onclick = function(){
-//     // let userName = nameField.value
-//     let userName1 = document.getElementById("nameField1").value;
-//     // console.log("Hello " + userName1);
-// }
-
-// document.getElementById("enter2").onclick = function(){
-// let userName2 = document.getElementById("nameField2").value;
-//     // console.log("Hello " + userName2);
-// }
-
-const board = Array(gridItem.length);
-console.log(board);
-
-// gridItems.forEach((gridItem) => gridItem.addEventListener(click, () => {
-//     let add = playerX + add;
-
-// Input Xs and Os
-for (let i = 0; i <gridItem.length; i++) {
-    
-    if(playerTurn === playerX){
-    gridItem.innerText = playerX;
-    }
-    else if (playerTurn === playerO) {
-        gridItem.innerText = playerO;
-    
-    }
-    
+document.getElementById("enter1").onclick = function(){
+    // let userName = nameField.value
+    let userName1 = document.getElementById("nameField1").value;
+    alert("Hello " + userName1);
 }
+
+document.getElementById("enter2").onclick = function(){
+    let userName2 = document.getElementById("nameField2").value;
+    // userName2.innerHTML = userName2;
+    console.log("Hello " + userName2);
+}
+
+// const board = Array(gridItem.length).fill(null);
+// console.log(board);
+
+// for (let i = 0; i <gridItem.length; i++) {
+//     for (let j = 0; j < gridItem.length; j++) {
+//         let grid = gridItem[j] + grid;
+//         console.log(grid);
+        
+//     }
+
+//     if(playerTurn === playerX){
+//     gridItem.innerText = playerX;
+//     }
+//     else if (playerTurn === playerO) {
+//         gridItem.innerText = playerO;
+//     }
+
+// };
 
 // Restart Game Function Check
-reset.removeEventListener('click', function(){
-if ((gameOver === gameWon) || (gameOver === gameWon) || (gameOver === gameTie)) {
+// reset.removeEventListener('click', function(){
+// if ((gameOver === gameWon) || (gameOver === gameLost) || (gameOver === gameTie)) {
+//     return true;
+// }
+// });
 
-}
-})
+// gridItem.addEventListener('click', () => {
+
+// })
+
