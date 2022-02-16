@@ -3,26 +3,34 @@
 let playerX = "X";
 let playerO = "O";
 
-let playerTurn = playerO;
+let playerTurn = playerX;
 
 let gameOver = false;
 
 // Query Selectors
 
-const nextTurn = () => {
-    playerTurn === playerX ? playerO : playerX;
-    return playerTurn;
-}
+// playerTurn === playerX ? playerO : playerX;
+//     return playerTurn;
 
 let gridItems = document.querySelectorAll(".gridItem");
-gridItems = Array.from(gridItems)
-console.log(gridItems);
+// gridItems = Array.from(gridItems)
+// console.log(gridItems);
 
-gridItems.forEach(function (gridItem){
-    gridItem.addEventListener('click', function (){
-    gridItem.innerHTML = playerTurn;
-    })
-});
+// gridItems.forEach(function (gridItem){
+//     gridItem.addEventListener('click', function (){
+//         if(gridItem.innerHTML != "") {
+//             return 0;
+//         }
+//         else {
+//         gridItem.innerHTML = playerTurn; 
+//         playerTurn = playerTurn === playerX ? playerO : playerX;
+//         return playerTurn;
+//         }
+// })
+    
+
+
+// });
 
 
 
@@ -36,33 +44,31 @@ let gameLost = document.querySelector("#gameLost");
 
 // Getting Name Input
 
-document.getElementById("enter1").onclick = function(){
-    // let userName = nameField.value
-    let userName1 = document.getElementById("nameField1").value;
-    alert("Hello " + userName1);
-}
+// document.getElementById("enter1").onclick = function(){
+//     // let userName = nameField.value
+//     let userName1 = document.getElementById("nameField1").value;
+//     alert("Hello " + userName1);
+// }
 
-document.getElementById("enter2").onclick = function(){
-    let userName2 = document.getElementById("nameField2").value;
-    // userName2.innerHTML = userName2;
-    console.log("Hello " + userName2);
-}
+// document.getElementById("enter2").onclick = function(){
+//     let userName2 = document.getElementById("nameField2").value;
+//     // userName2.innerHTML = userName2;
+//     console.log("Hello " + userName2);
+// }
 
-// const board = Array(gridItem.length).fill(null);
-// console.log(board);
+// const gridItems = Array(gridItem.length).fill(null);
+// console.log(gridItems);
 
-// for (let i = 0; i <gridItem.length; i++) {
-//     for (let j = 0; j < gridItem.length; j++) {
-//         let grid = gridItem[j] + grid;
-//         console.log(grid);
-        
-//     }
+// for (let i = 0; i < gridItems.length; i++) {
+//         let grid = gridItems[i];
+//         console.log(grid); 
 
 //     if(playerTurn === playerX){
-//     gridItem.innerText = playerX;
+//     gridItems[i].innerHTML = playerX;
 //     }
-//     else if (playerTurn === playerO) {
-//         gridItem.innerText = playerO;
+//     else {
+//         (playerTurn === playerO) 
+//         gridItems[i].innerHTML = playerO;
 //     }
 
 // };
