@@ -1,37 +1,9 @@
 // Declaring variables
 
-let playerX = "X";
-let playerO = "O";
-
+const playerX = "X";
+const playerO = "O";
 let playerTurn = playerX;
-
 let gameOver = false;
-
-// Query Selectors
-
-// playerTurn === playerX ? playerO : playerX;
-//     return playerTurn;
-
-let gridItems = document.querySelectorAll(".gridItem");
-// gridItems = Array.from(gridItems)
-// console.log(gridItems);
-
-// gridItems.forEach(function (gridItem){
-//     gridItem.addEventListener('click', function (){
-//         if(gridItem.innerHTML != "") {
-//             return 0;
-//         }
-//         else {
-//         gridItem.innerHTML = playerTurn; 
-//         playerTurn = playerTurn === playerX ? playerO : playerX;
-//         return playerTurn;
-//         }
-// })
-    
-
-
-// });
-
 
 
 const reset = document.querySelector(".restart")
@@ -40,6 +12,39 @@ const play = document.querySelector(".play");
 
 let gameWon = document.querySelector("#gameWon");
 let gameLost = document.querySelector("#gameLost");
+let gridItems = document.querySelectorAll(".gridItem");
+
+// playerTurn === playerX ? playerO : playerX;
+//     return playerTurn;
+
+
+// syntax for creating array from the 3X3 grid
+
+gridItems = Array.from(gridItems)
+// console.log(gridItems);
+
+// make the grid clickable and take input
+
+gridItems.forEach(function (gridItem){
+gridItem.addEventListener('click', function (){
+
+// check if the grid is empty. If not empty make it not clickable 
+
+        if(gridItem.innerHTML != "") {
+            return 0;
+        }
+        else {
+        gridItem.innerHTML = playerTurn; 
+
+// alternate the xs and the os on the board on click
+
+        playerTurn = playerTurn === playerX ? playerO : playerX;
+        return playerTurn;
+        }
+})
+
+});
+
 
 
 // Getting Name Input
@@ -54,6 +59,25 @@ let gameLost = document.querySelector("#gameLost");
 //     let userName2 = document.getElementById("nameField2").value;
 //     // userName2.innerHTML = userName2;
 //     console.log("Hello " + userName2);
+// }
+
+
+let winningCombinations = [
+    [0, 1, 2],
+    [3, 4, 5],
+    [6, 7, 8],
+    [0, 3, 6],
+    [1, 4, 7],
+    [2, 5, 8],
+    [0, 4, 7],
+    [2, 4, 6]
+];
+
+// for (let i = 0; i < winningCombinations.length; i++) {
+    console.log(winningCombinations); 
+
+// if (playerX = winningCombinations){
+//     console.log("You win");
 // }
 
 // const gridItems = Array(gridItem.length).fill(null);
@@ -83,4 +107,3 @@ let gameLost = document.querySelector("#gameLost");
 // gridItem.addEventListener('click', () => {
 
 // })
-
