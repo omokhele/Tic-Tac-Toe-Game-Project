@@ -22,17 +22,17 @@ let gridItems = document.querySelectorAll(".gridItem");
 
 // Getting Name Input
 
-// document.getElementById("enter1").onclick = function(){
-//     // let userName = nameField.value
-//     let userName1 = document.getElementById("nameField1").value;
-//     alert("Hello " + userName1);
-// }
+document.getElementById("enter1").onclick = function(){
+    // let userName = nameField.value
+    let userName1 = document.getElementById("nameField1").value;
+    alert("Hello " + userName1);
+}
 
-// document.getElementById("enter2").onclick = function(){
-//     let userName2 = document.getElementById("nameField2").value;
-//     // userName2.innerHTML = userName2;
-//     console.log("Hello " + userName2);
-// }
+document.getElementById("enter2").onclick = function() => {
+    let userName2 = document.getElementById("nameField2").value;
+    // userName2.innerHTML = userName2;
+    alert("Hello " + userName2);
+}
 
 // syntax for creating array from the 3X3 grid
 
