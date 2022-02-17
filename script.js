@@ -7,7 +7,6 @@ let gameOver = false;
 
 let playerXCounter = 0;
 let playerOCounter = 0;
-let win;
 
 const reset = document.querySelector(".restart")
 const nameField = document.querySelector("#nameField");
@@ -52,54 +51,45 @@ gridItem.addEventListener('click', function (){
         }
         else {
         gridItem.innerHTML = playerTurn; 
-
-        checkWin();
         }
+        
 // alternate the xs and the os on the board on click
-     
 
         playerTurn = playerTurn === playerX ? playerO : playerX;
-        console.log(gridItem);
-        
-        
+        // console.log(gridItem);
+    
+        checkWin();
 
      function checkWin() {
-         for (const combo of combos)  {
-             console.log(combo);
-         }
-     }       
 
-     const combos = [ 
-        {co: [0, 1, 2]},
-        {co: [3, 4, 5]},
-        {co: [6, 7, 8]},
-        {co: [0, 3, 6]},
-        {co: [1, 4, 7]},
-        {co: [2, 5, 8]},
-        {co: [0, 4, 8]},
-        {co: [2, 4, 6]},
+    }
+
+function checkWin () {
+    const combos = [ 
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6],
         ];
+    combos.forEach(function(combo){
+        let check = combo.every(index => gridItems[index].innerHTML == playerTurn);
+        if (check){
+            alert(playerTurn + " has won");
+            // highlight(combo);
+        }
+    })
+}
+})
+})
 
-
-// function checkWinner(playerTurn) {
-//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
-//                 return true;
-//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
-//                 return true;
-//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
-//                 return true;
-//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
-//                 return true;
-//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
-//                 return true;
-//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
-//                 return true;
-//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
-//                 return true;
-//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
-//                 return true;
-                
-//            return false; 
+// function highlight(combo) {
+//     combo.forEach(function(index){
+//         gridItems[index].classList.add("highlight");
+//     })
 // }
 
 // Restart Game Function Check
@@ -112,17 +102,4 @@ gridItem.addEventListener('click', function (){
 // gridItem.addEventListener('click', () => {
 
 // })
-})
-})
-
-
-// const combos = [ 
-//     [0, 1, 2],
-//     [3, 4, 5],
-//     [6, 7, 8],
-//     [0, 3, 6],
-//     [1, 4, 7],
-//     [2, 5, 8],
-//     [0, 4, 8],
-//     [2, 4, 6],
-//     ];
+// })
