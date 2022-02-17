@@ -2,7 +2,7 @@
 
 EDIT.
 
-Iwas able to achieve four things.
+I was able to achieve four things.
 
 1.  a play game button
 2. Clickable cells
