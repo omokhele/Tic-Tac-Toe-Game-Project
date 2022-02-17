@@ -4,6 +4,8 @@ const playerX = "X";
 const playerO = "O";
 let playerTurn = playerX;
 let gameOver = false;
+let gameTie;
+let gameLost;
 
 let playerXCounter = 0;
 let playerOCounter = 0;
@@ -15,6 +17,8 @@ const play = document.querySelector(".play");
 let gameWon = document.querySelector("#gameWon");
 // let gameLost = document.querySelector("#gameLost");
 let gridItems = document.querySelectorAll(".gridItem");
+let scoreField1 = document.getElementById("#scoreField1");
+let scoreField2 = document.getElementById("#scoreField2");
 
 // playerTurn === playerX ? playerO : playerX;
 //     return playerTurn;
@@ -59,6 +63,7 @@ gridItem.addEventListener('click', function (){
         // console.log(gridItem);
     
         checkWin();
+        // gameEnded();
 
      function checkWin() {
 
@@ -76,9 +81,12 @@ function checkWin () {
         [2, 4, 6],
         ];
     combos.forEach(function(combo){
+        let score = 0;
         let check = combo.every(index => gridItems[index].innerHTML == playerTurn);
         if (check){
-            alert(playerTurn + " has won");
+            score++
+        alert(playerTurn + " has won " + score + " game");
+            // scoreField.innerHTML == score;
             // highlight(combo);
         }
     })
@@ -86,11 +94,29 @@ function checkWin () {
 })
 })
 
+
+    // return document.getElementById(gameWon + number).innerText;
+ 
+
+// function score(playerTurn) { {
+//     if (playerTurn == playerX) {
+// }
+
+// function score() {
+//     let score = 0;
+//     if (check) {
+//         alert(plaayerTurn + "has won");
+        
+//     }
+
+// }
+
 // function highlight(combo) {
 //     combo.forEach(function(index){
 //         gridItems[index].classList.add("highlight");
 //     })
 // }
+
 
 // Restart Game Function Check
 // reset.removeEventListener('click', function(){
@@ -103,3 +129,9 @@ function checkWin () {
 
 // })
 // })
+
+// const gameEnded = () => {
+//     console.log("Game ended")
+// }
+//     }
+//  }
