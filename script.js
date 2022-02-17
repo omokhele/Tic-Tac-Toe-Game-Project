@@ -5,11 +5,9 @@ const playerO = "O";
 let playerTurn = playerX;
 let gameOver = false;
 
-
 let playerXCounter = 0;
 let playerOCounter = 0;
-// let win;
-
+let win;
 
 const reset = document.querySelector(".restart")
 const nameField = document.querySelector("#nameField");
@@ -49,47 +47,60 @@ gridItem.addEventListener('click', function (){
 
 // check if the grid is empty. If not empty make it not clickable 
 
-        if(gridItem.innerHTML != "") {
+        if (gridItem.innerHTML != "") {
             return 0;
         }
         else {
         gridItem.innerHTML = playerTurn; 
-        checkWin ();
 
+        checkWin();
+        }
 // alternate the xs and the os on the board on click
+     
 
         playerTurn = playerTurn === playerX ? playerO : playerX;
-        return playerTurn;
-        }
-
+        console.log(gridItem);
         
-});
+        
 
-const checkWin = () => {
-    for(const winningCombo of winningCombos) {
-        console.log(winningCombo)
-    }
-}
-    const winningCombos = [ 
-        {combo: [0, 1, 2]},
-        {combo: [3, 4, 5]},
-        {combo: [6, 7, 8]},
-        {combo: [0, 3, 6]},
-        {combo: [1, 4, 7]},
-        {combo: [2, 5, 8]},
-        {combo: [0, 4, 8]},
-        {combo: [2, 4, 6]},
-    ];
-    
-    // if (playerTurn == gridItem[0] && 
-    //     gridItem[0] == gridItem[1] && 
-    //     gridItem[0] == gridItem[2])
-    // {
-    //     console.log("Winner");
-    // }
-    
-});
+     function checkWin() {
+         for (const combo of combos)  {
+             console.log(combo);
+         }
+     }       
 
+     const combos = [ 
+        {co: [0, 1, 2]},
+        {co: [3, 4, 5]},
+        {co: [6, 7, 8]},
+        {co: [0, 3, 6]},
+        {co: [1, 4, 7]},
+        {co: [2, 5, 8]},
+        {co: [0, 4, 8]},
+        {co: [2, 4, 6]},
+        ];
+
+
+// function checkWinner(playerTurn) {
+//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
+//                 return true;
+//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
+//                 return true;
+//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
+//                 return true;
+//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
+//                 return true;
+//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
+//                 return true;
+//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
+//                 return true;
+//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
+//                 return true;
+//             if (playerTurn == gridItem[0] && gridItem[0] == gridItem[1] && gridItem[0] == gridItem[2])
+//                 return true;
+                
+//            return false; 
+// }
 
 // Restart Game Function Check
 // reset.removeEventListener('click', function(){
@@ -100,6 +111,18 @@ const checkWin = () => {
 
 // gridItem.addEventListener('click', () => {
 
+// })
+})
+})
 
 
-
+// const combos = [ 
+//     [0, 1, 2],
+//     [3, 4, 5],
+//     [6, 7, 8],
+//     [0, 3, 6],
+//     [1, 4, 7],
+//     [2, 5, 8],
+//     [0, 4, 8],
+//     [2, 4, 6],
+//     ];
